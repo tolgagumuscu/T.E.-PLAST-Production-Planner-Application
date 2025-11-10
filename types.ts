@@ -32,12 +32,6 @@ export interface JobDetailModalProps {
   headers: string[];
 }
 
-// FIX: Added missing ChatMessage interface used by ChatInterface.tsx
-export interface ChatMessage {
-  role: 'user' | 'model';
-  text: string;
-}
-
 export interface DowntimeData {
   machineId: number;
   jobDowntime: number;
