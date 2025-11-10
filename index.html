@@ -41,6 +41,8 @@
 <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
 <!-- DHTMLX Gantt Chart JS -->
 <script src="https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.js"></script>
+<!-- Babel Standalone for in-browser TSX/JSX transpilation -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <style>
     /* Custom Gantt Task Colors */
     .gantt_task_line.machine_1 { background-color: #3b82f6; border-color: #2563eb; }
@@ -116,6 +118,6 @@
 </head>
   <body class="bg-brand-bg font-sans">
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <script type="text/babel" data-presets="react,typescript" data-type="module" src="./index.tsx"></script>
   </body>
 </html>
