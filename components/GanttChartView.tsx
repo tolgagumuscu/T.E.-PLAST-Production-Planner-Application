@@ -35,9 +35,9 @@ const GanttChartView: React.FC<GanttChartViewProps> = ({ planData, translations:
       const task = gantt.getTask(id);
       if (task.type === gantt.config.types.project) return;
       
-      const originalJob = planData.find(job => `${job.machineId}-${job['SIRA NO'] || job.originalIndex}` === id);
-      if(originalJob) {
-        onTaskClick(originalJob);
+      const job = planData[parseInt(id, 10)];
+      if(job) {
+        onTaskClick(job);
       }
   };
 
@@ -99,7 +99,7 @@ const GanttChartView: React.FC<GanttChartViewProps> = ({ planData, translations:
         gantt.detachEvent(onClickEvent);
     }
 
-  }, [t, machineTonnages, planData]);
+  }, [t, machineTonnages, planData, onTaskClick]);
 
   useEffect(() => {
     if (timelineView === 'general') {
@@ -162,7 +162,10 @@ const GanttChartView: React.FC<GanttChartViewProps> = ({ planData, translations:
     });
 
     // Add job child tasks
-    filteredData.forEach((job, index) => {
+    filteredData.forEach((job) => {
+      const planDataIndex = planData.findIndex(p => p === job);
+      if (planDataIndex === -1) return;
+
       const startDate = parseGanttDate(job['İŞ EMRİ TARİH ve SAATİ']);
       let endDate = parseGanttDate(job['PARÇA ÜRETİM SONU TARİHİ ve SAATİ']);
       const dueDate = parseGanttDate(job['TERMİN TARİHİ']);
@@ -181,7 +184,7 @@ const GanttChartView: React.FC<GanttChartViewProps> = ({ planData, translations:
       }
 
       tasks.push({
-        id: `${job.machineId}-${job['SIRA NO'] || index}`,
+        id: String(planDataIndex),
         text: job['PARÇA ADI'] || 'N/A',
         start_date: formatGanttDate(startDate),
         end_date: formatGanttDate(endDate),
@@ -192,7 +195,6 @@ const GanttChartView: React.FC<GanttChartViewProps> = ({ planData, translations:
         part_no: job['PARÇA NO'],
         total_quantity: job['TOPLAM ADET'],
         paint_code: job['BOYA KODU'],
-        originalIndex: index,
       });
     });
 
