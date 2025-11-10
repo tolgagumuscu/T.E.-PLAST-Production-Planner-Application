@@ -1,0 +1,5 @@
+{
+  "name": "Latest Copy of TE PLAST Üretim Asistanı (Tarih Düzgün)",
+  "description": "An application to visualize and manage a plastic injection machine production plan. Users can upload an Excel file to see the production schedule in a table, Gantt chart, and various dashboards for offline use.",
+  "requestFramePermissions": []
+}
