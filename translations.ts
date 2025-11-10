@@ -1,7 +1,7 @@
 export const translations = {
   tr: {
     title: 'TE PLAST Üretim Asistanı',
-    subtitle: 'Gemini ile Üretim Planınızı Yönetin',
+    subtitle: 'Üretim Planınızı Yönetin',
     productionData: 'Üretim Verileri',
     machine: 'Makine',
     ton: 'Ton',
@@ -62,7 +62,7 @@ export const translations = {
   },
   en: {
     title: 'TE PLAST Production Assistant',
-    subtitle: 'Manage Your Production Plan with Gemini',
+    subtitle: 'Manage Your Production Plan',
     productionData: 'Production Data',
     machine: 'Machine',
     ton: 'Ton',
