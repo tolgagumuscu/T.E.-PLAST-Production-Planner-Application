@@ -1,6 +1,6 @@
 import React from 'react';
-import { ProductionData } from '../types';
-import { parseGanttDate } from '../utils/dateUtils';
+import { ProductionData } from '../types.ts';
+import { parseGanttDate } from '../utils/dateUtils.ts';
 
 
 interface DashboardProps {

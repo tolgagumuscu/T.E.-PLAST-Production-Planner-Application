@@ -1,5 +1,5 @@
 import React from 'react';
-import { DowntimeHistogramProps } from '../types';
+import { DowntimeHistogramProps } from '../types.ts';
 
 // More serious, professional color palette
 const barColors = {

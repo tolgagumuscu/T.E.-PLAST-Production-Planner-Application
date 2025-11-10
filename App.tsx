@@ -1,14 +1,14 @@
 
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { ProductionData } from './types';
-import ProductionTable from './components/ProductionTable';
-import MachineStatusDashboard from './components/MachineStatusDashboard';
-import DowntimeHistogram from './components/DowntimeHistogram';
-import GanttChartView from './components/GanttChartView';
-import JobDetailModal from './components/JobDetailModal';
-import { logoBase64 } from './assets/logo';
-import { translations } from './translations';
-import { parseGanttDate, parseDowntimeToHours } from './utils/dateUtils';
+import { ProductionData } from './types.ts';
+import ProductionTable from './components/ProductionTable.tsx';
+import MachineStatusDashboard from './components/MachineStatusDashboard.tsx';
+import DowntimeHistogram from './components/DowntimeHistogram.tsx';
+import GanttChartView from './components/GanttChartView.tsx';
+import JobDetailModal from './components/JobDetailModal.tsx';
+import { logoBase64 } from './assets/logo.ts';
+import { translations } from './translations.ts';
+import { parseGanttDate, parseDowntimeToHours } from './utils/dateUtils.ts';
 
 
 declare var XLSX: any; // Global variable from SheetJS script

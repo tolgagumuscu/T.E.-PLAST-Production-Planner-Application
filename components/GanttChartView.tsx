@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { ProductionData } from '../types';
-import { parseGanttDate, formatGanttDate } from '../utils/dateUtils';
+import { ProductionData } from '../types.ts';
+import { parseGanttDate, formatGanttDate } from '../utils/dateUtils.ts';
 
 declare var gantt: any;
 

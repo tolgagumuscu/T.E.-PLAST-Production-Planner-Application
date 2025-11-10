@@ -1,6 +1,6 @@
 import React from 'react';
-import { JobDetailModalProps } from '../types';
-import { parseGanttDate } from '../utils/dateUtils';
+import { JobDetailModalProps } from '../types.ts';
+import { parseGanttDate } from '../utils/dateUtils.ts';
 
 
 const formatDateForDisplay = (dateInput: string | Date | null | undefined): string => {
